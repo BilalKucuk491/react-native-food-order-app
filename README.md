@@ -1,1 +1,1 @@
-<h2>Merhaba</h2>
+<h2>Food Recipe App Screens</h2>
