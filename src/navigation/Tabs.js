@@ -1,7 +1,4 @@
 import React from "react";
-import {
-    View,
-} from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
 import { Home } from "../screens"
@@ -12,7 +9,7 @@ const Tabs = () => {
     return (
         <Tab.Navigator>
             <Tab.Screen
-                name="Home"
+                name="HomeScreen"
                 component={Home}
             />
             <Tab.Screen
