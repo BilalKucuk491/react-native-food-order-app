@@ -27,7 +27,7 @@ const sugar = require("../assets/icons/sugar.png")
 const shrimp = require("../assets/icons/shrimp.png")
 const tomato = require("../assets/icons/tomato.png")
 
-export default {
+export {
     bookmark,
     bookmarkFilled,
     back,

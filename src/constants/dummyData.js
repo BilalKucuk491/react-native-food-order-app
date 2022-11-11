@@ -256,7 +256,7 @@ const trendingRecipes = [
 
 const categories = trendingRecipes;
 
-export default {
+export {
   trendingRecipes,
   categories,
 };
