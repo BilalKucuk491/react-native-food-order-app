@@ -1,17 +1,40 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ImageBackground,
+  StatusBar,
+} from 'react-native';
+import {COLORS, FONTS, SIZES, images} from '../constants';
+import {LinearGradient} from "react-native-linear-gradient"
+
 const Login = ({navigation}) => {
+
+  const renderHeader = ()=>{
+    return (
+      <View style={{
+        height:SIZES.height > 700 ? "65%":"60%"
+      }}>
+        <ImageBackground source={images.loginBackground} 
+        style={{
+          flex:1,
+          justifyContent:"flex-end"
+        }} resizeMode="cover" />
+      </View>
+    )
+  }
+
   return (
     <View
       style={{
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: COLORS.black,
       }}>
-      <Text>Login</Text>
-      <TouchableOpacity onPress={() => navigation.replace('Home')}>
-        <Text>Navigate to Home</Text>
-      </TouchableOpacity>
+        <StatusBar barStyle="light-content" />
+        {renderHeader()}
+      {/* header */}
+      {/* Details */}
     </View>
   );
 };

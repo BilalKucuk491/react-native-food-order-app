@@ -1,6 +1,5 @@
-import images from './images';
-import icons from './icons';
-
+import * as images from './images';
+import * as icons from './icon';
 const trendingRecipes = [
   {
     id: 1,
@@ -256,7 +255,4 @@ const trendingRecipes = [
 
 const categories = trendingRecipes;
 
-export {
-  trendingRecipes,
-  categories,
-};
+export {trendingRecipes, categories};
