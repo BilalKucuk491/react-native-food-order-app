@@ -339,12 +339,39 @@ const Recipe = ({navigation, route}) => {
             flex: 1,
             justifyContent: 'center',
           }}>
+          {/* viewers */}
 
-            {/* viewers */}
+          <Viewers viewersList={selectedRecipe?.viewers} />
+        </View>
+      </View>
+    );
+  };
 
-            <Viewers viewersList = {selectedRecipe?.viewers} />
-
-          </View>
+  const renderIngredientHeader = () => {
+    return (
+      <View
+        style={{
+          flexDirection: 'row',
+          paddingHorizontal: 30,
+          marginTop: SIZES.radius,
+          marginBottom: SIZES.padding,
+        }}>
+        <Text
+          style={{
+            flex: 1,
+            ...FONTS.h3,
+            color:COLORS.black,
+            fontWeight:"bold"
+          }}>
+          Ingredients
+        </Text>
+        <Text
+          style={{
+            color: COLORS.lightGray2,
+            ...FONTS.body4,
+          }}>
+          {selectedRecipe?.ingredients.length} item
+        </Text>
       </View>
     );
   };
@@ -366,6 +393,8 @@ const Recipe = ({navigation, route}) => {
             {/* info */}
             {renderRecipeInfo()}
             {/* ingredient title */}
+
+            {renderIngredientHeader()}
           </View>
         }
         scrollEventThrottle={16}
@@ -433,6 +462,13 @@ const Recipe = ({navigation, route}) => {
             </View>
           </View>
         )}
+        ListFooterComponent={
+          <View
+            style={{
+              marginBottom: 100,
+            }}
+          />
+        }
       />
 
       {/* header bar  */}
