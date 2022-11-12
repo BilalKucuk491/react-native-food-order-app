@@ -91,7 +91,7 @@ const Login = ({navigation}) => {
               marginTop :SIZES.radius,
               paddingVertical:18,
               borderRadius:20,
-              borderColor :COLORS.darkLime,
+              borderColor :COLORS.lime,
               borderWidth:1
              }}
             onPress={()=> navigation.replace("Home")}
