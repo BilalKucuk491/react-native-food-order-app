@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {BlurView} from '@react-native-community/blur';
 import {COLORS, SIZES, FONTS, icons} from '../constants/index';
-
+import Viewers from '../components/Viewers';
 const HEADER_HEIGHT = 350;
 
 const RecipeCreatorCardDetail = ({selectedRecipe}) => {
@@ -343,7 +343,7 @@ const Recipe = ({navigation, route}) => {
             {/* viewers */}
 
             <Viewers viewersList = {selectedRecipe?.viewers} />
-            
+
           </View>
       </View>
     );
