@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import {FONTS, COLORS, SIZES, icons, images, dummyData} from '../constants';
-import {CategoryCard,TrendingCard} from '../components';
+import {CategoryCard, TrendingCard} from '../components';
 
 const Home = ({navigation}) => {
   const renderHeader = () => {
@@ -122,7 +122,7 @@ const Home = ({navigation}) => {
                 textDecorationLine: 'underline',
                 ...FONTS.h3,
               }}>
-              See Recipesssss
+              See Recipes
             </Text>
           </TouchableOpacity>
         </View>
@@ -151,12 +151,49 @@ const Home = ({navigation}) => {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           keyExtractor={item => `${item.id}`}
-          renderItem={({item}) => {
+          renderItem={({item, index}) => {
             return (
-              <TrendingCard recipeItem={item}  />
+              <TrendingCard
+                containerStyle={{
+                  marginLeft: index == 0 ? SIZES.padding : 0,
+                }}
+                onPress={() => navigation.navigate('Recipe', {recipe: item})}
+                recipeItem={item}
+              />
             );
           }}
         />
+      </View>
+    );
+  };
+
+  const renderCategoryHeader = () => {
+    return (
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginTop: 20,
+          marginHorizontal: SIZES.padding,
+        }}>
+        {/* section title */}
+        <Text
+          style={{
+            flex: 1,
+            ...FONTS.h2,
+            fontWeight: 'bold',
+            color: COLORS.black,
+          }}>
+          Categories
+        </Text>
+        {/* viw all */}
+        <TouchableOpacity
+          style={{
+            ...FONTS.body4,
+            color: COLORS.gray,
+          }}>
+          <Text>View All</Text>
+        </TouchableOpacity>
       </View>
     );
   };
@@ -188,7 +225,10 @@ const Home = ({navigation}) => {
             {/* trending section */}
 
             {renderTrendingSection()}
+
             {/* category header section */}
+
+            {renderCategoryHeader()}
           </View>
         }
         renderItem={({item}) => {
