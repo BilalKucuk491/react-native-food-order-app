@@ -13,7 +13,7 @@ const Recipe = () => {
                 justifyContent: 'center'
             }}
         >
-            <Text>Recipe</Text>
+            <Text>Recipe Screen</Text>
         </View>
     )
 }
