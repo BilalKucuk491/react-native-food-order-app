@@ -334,7 +334,17 @@ const Recipe = ({navigation, route}) => {
         </View>
 
         {/* Viewers */}
-        
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+          }}>
+
+            {/* viewers */}
+
+            <Viewers viewersList = {selectedRecipe?.viewers} />
+            
+          </View>
       </View>
     );
   };
