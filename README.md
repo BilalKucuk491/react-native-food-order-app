@@ -1,4 +1,4 @@
-<h2>Food Recipe App c </h2>
+<h2>Food Recipe App</h2>
 
 
 
